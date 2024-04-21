@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+//====================================================
 PQueueNode* createPQueueNode(ItemType x) {
 	//Cap phat 1 node moi de luu tru gia tri x
 	PQueueNode* p = new PQueueNode;
@@ -11,9 +11,12 @@ PQueueNode* createPQueueNode(ItemType x) {
 		return NULL;
 	}
 	p->Info = x;
+	p->priority = x.CV; // độ ưu tiên ngắn theo độ ưu tiên trong công việc
 	p->Next = NULL;
 	return p;
 }
+//====================================================
+// hiện thị dữ liệu sinh viên vừa nhập vào màn hình
 void xuatTTSinhVien(ItemType x)
 {
 	printf("| %-5d | %-20s | %-8s | %-3s | %-3d | %-6d |\n", x.Mssv, x.TenSV, x.Lop, x.Ill, x.CV, x.Tgian);
@@ -41,7 +44,8 @@ int isEmpty(PQueue qu) {
 		return 0; //hang doi qu ko rong
 	}
 }
-
+//====================================================
+// mô tả yêu cầu của nhân viên để hiện ra màn hình
 const char* getJobDescription(int jobCode) {
 	switch (jobCode) {
 	case 1: return "Gap giao vien";
@@ -54,6 +58,7 @@ const char* getJobDescription(int jobCode) {
 }
 
 //====================================================
+// hiên thi hàng đợi ưu tiên ra màn hinh
 void showPQueue(PQueue qu) {
 	if (isEmpty(qu) == 1) {
 		printf("Hang doi rong!");
@@ -67,10 +72,10 @@ void showPQueue(PQueue qu) {
 		const char* illnessStatus = (strcmp(p->Info.Ill, "Y") == 0) ? "Co" : "Khong";
 		const char* jobDescription = getJobDescription(p->Info.CV);
 
-		printf("%-4d  %-15d  %-20s  %-10s  %-10s  %-30s  %d gio\n", stt++, p->Info.Mssv, p->Info.TenSV, p->Info.Lop, illnessStatus, jobDescription, p->Info.Tgian);
+		printf("%-4d  %-15d  %-20s  %-10s  %-10s  %-30s  %d ngay \n", stt++, p->Info.Mssv, p->Info.TenSV, p->Info.Lop, illnessStatus, jobDescription, p->Info.Tgian);
 	}
 }
-
+//====================================================
 
 //====================================================
 int insert(PQueue& qu, PQueueNode* p) {
@@ -83,11 +88,21 @@ int insert(PQueue& qu, PQueueNode* p) {
 		qu.Tail = p;
 	}
 	else {
-		qu.Tail->Next = p;
-		qu.Tail = p;
+		while (true)
+		{
+			const char* isSenior = strstr(p->Info.Lop, "15");
+			if (isSenior) {
+				if (strcmp(p->Info.Ill,"Y") == 0) {
+					PQueueNode* p = qu.Head;
+					PQueueNode* q = p->Next;
+				}
+			}
+		}
 	}
 	return 1; //Them thanh cong
 }
+//====================================================
+// hiện thị công việc mà sinh viên muốn xử lý 
 void menuYeuTien() {
 	printf("\n=========================================================");
 	printf("\n=              CHON CONG VIEC MUON XU LY                =");
@@ -100,6 +115,7 @@ void menuYeuTien() {
 	printf("\n");
 }
 //====================================================	
+// tạo một phiếu yêu cầu của nhân viên từ bàn phím
 void nhapTTSinhVien(ItemType& x)
 {
 	printf("Nhap ma so sinh vien: ");
@@ -138,7 +154,8 @@ void nhapTTSinhVien(ItemType& x)
 	printf("Nhap thoi gian dien phieu: ");
 	scanf_s("%d", &x.Tgian);
 }
-
+//====================================================
+// hiện thị lựa chọn cho người dùng
 void showMenu() {
 	printf("\n=========================================================");
 	printf("\n=                      LUA CHON                         =");
@@ -149,6 +166,7 @@ void showMenu() {
 	printf("\n=========================================================");
 
 }
+//====================================================
 void createPQueue(PQueue& PQU) {
 	//Tao hang doi nhap tu ban phim
 	int n;
@@ -167,6 +185,8 @@ void createPQueue(PQueue& PQU) {
 	}
 
 }
+//====================================================
+// đọc dữ liệu sinh viên từ file
 void createPQueue_LoadTextFile(PQueue& qu, const char* fileName) {
 	FILE* file;
 	file = fopen(fileName, "r");
@@ -225,7 +245,8 @@ void createPQueue_LoadTextFile(PQueue& qu, const char* fileName) {
 
 	fclose(file);
 }
-
+//====================================================
+// hiện thị menu ra man hình
 void process() {
 	ItemType X, Y;
 	PQueueNode* P, * Q;
