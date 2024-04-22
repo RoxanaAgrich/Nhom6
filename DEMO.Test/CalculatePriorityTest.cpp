@@ -1,6 +1,8 @@
 #include <gtest/gtest.h>
 #include "../DEMO/PQueue.h"
 #include "../DEMO/CalculatePriority.cpp"
+#include "../DEMO/PQueue.cpp"
+#include "../DEMO/ShowListStudentTickets.cpp"
 
 class CalculatePriorityTest : public ::testing::Test {
 protected:
