@@ -43,7 +43,7 @@ void process() {
 		}
 		case 4:
 		{
-			populateToStudentListFromReadingFile(PQU,fileName);
+			populateToStudentListFromReadingFile(PQU, fileName);
 			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
 			showPQueue(PQU);
 			break;
@@ -80,6 +80,42 @@ void process() {
 				printf("\n Loi! That bai viec dong bo!");
 			}
 			break;
+		}
+		case 10: {
+			int resultSize = 0;
+			ClassWithStudents* classesWithMost = getClassesWithMostRequestTickets(PQU, &resultSize);
+			if (resultSize > 0) {
+				if (resultSize == 1) {
+					printf("\nLop co so phieu giai quyet yeu cau cua sinh vien cao nhat la %s voi %d so phieu yeu cau", classesWithMost[0].className, classesWithMost[0].studentCount);
+					printf("\Duoi day la danh sach phieu giai quyet yeu cau cua hoc sinh cua lop %s:\n", classesWithMost[0].className);
+					for (int j = 0; j < classesWithMost[0].studentCount; j++) {
+						int jobNumber = classesWithMost[0].students[j].CV;
+						const char* jobDescription = getJobDescription(jobNumber);
+						printf("  - %s (MSSV: %s) - %s\n", classesWithMost[0].students[j].TenSV, classesWithMost[0].students[j].Mssv, jobDescription);
+					}
+				}
+				else 
+				{
+					printf("Co tong cong %d lop sau day la co so phieu giai quyet yeu cau sinh vien cao nhat, do la:\n", resultSize);
+					for (int i = 0; i < resultSize; i++)
+					{
+						printf("Lop %s voi %d so phieu yeu cau\n", classesWithMost[i].className, classesWithMost[i].studentCount);
+					}
+					for (int i = 0; i < resultSize; i++)
+					{
+						printf("\n\n\nDuoi day la danh sach phieu giai quyet yeu cau cua hoc sinh cua lop %s:\n", classesWithMost[i].className);
+						for (int j = 0; j < classesWithMost[i].studentCount; j++) {
+							int jobNumber = classesWithMost[i].students[j].CV;
+							const char* jobDescription = getJobDescription(jobNumber);
+							printf("  - %s (MSSV: %s) - %s\n", classesWithMost[i].students[j].TenSV, classesWithMost[i].students[j].Mssv, jobDescription);
+						}
+					}
+					free(classesWithMost);
+				}
+			}
+			else {
+				printf("Khong co lop nao dang xu ly yeu cau cua sinh vien.\n");
+			}
 		}
 		default:
 			break;

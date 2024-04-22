@@ -35,6 +35,12 @@ struct PQueue {
 	PQueueNode* Tail; //Luu con tro node cuoi hang doi
 };
 
+typedef struct {
+	char className[250];
+	int studentCount;
+	ItemType* students;
+} ClassWithStudents;
+
 //====================================================
 //Khai bao nguyen mau ham
 void nhapTTSinhVien(ItemType& x);
@@ -60,4 +66,5 @@ void showMenu();				//Hien thi menu
 void process();					//Xu ly cac chuc nang
 int calculatePriority(const SinhVien* x); // tính độ ưu tiên của sinh viên
 bool saveToFile(PQueue qu, const char* fileName);// lưu danh sách sinh viên vào file Text
+ClassWithStudents* getClassesWithMostRequestTickets(PQueue qu, int* resultSize); // lấy ra lớp có số phiếu yêu cầu nhiều nhất
 #endif  PQueue_h

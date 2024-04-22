@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="CalculatePriority.cpp" />
     <ClCompile Include="CreateListStudentTicketsByHand.cpp" />
+    <ClCompile Include="GetClassWithMostRequestTickets.cpp" />
     <ClCompile Include="PopulateToStudentListFromReadingFile.cpp" />
     <ClCompile Include="SaveToFile.cpp" />
     <ClCompile Include="ShowListStudentTickets.cpp" />
