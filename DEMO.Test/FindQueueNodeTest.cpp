@@ -11,7 +11,6 @@ protected:
         queue.Head = nullptr;
         queue.Tail = nullptr;
     }
-
     void addStudent(const char* mssv, const char* tenSV, int priority) {
         PQueueNode* newNode = new PQueueNode;
         strncpy(newNode->Info.Mssv, mssv, sizeof(newNode->Info.Mssv));

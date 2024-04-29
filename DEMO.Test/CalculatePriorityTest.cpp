@@ -22,20 +22,20 @@ protected:
 };
 
 // Assert that the nonIT student is 10000
-static TEST_F(CalculatePriorityTest, DefaultValues) {
+static TEST_F(CalculatePriorityTest, CalculatePriorityForNonITStudent) {
     int expected_priority = 10000;
     ASSERT_EQ(calculatePriority(&sv), expected_priority);
 }
 
 // Assert that the IT student is 0
-static TEST_F(CalculatePriorityTest, ITStudentWithoutGoodHealth) {
+static TEST_F(CalculatePriorityTest, CalculatePriorityForITStudent) {
     sv.IsCntt = true;
     int expected_priority = 0;
     ASSERT_EQ(calculatePriority(&sv), expected_priority);
 }
 
 // Assert that the IT student which is in good health is 100
-static TEST_F(CalculatePriorityTest, ITStudentWithGoodHealth) {
+static TEST_F(CalculatePriorityTest, CalculatePriorityForITStudentWithGoodHealth) {
     sv.IsCntt = true;
     sv.IsGoodHeal = true;
     int expected_priority = 100;

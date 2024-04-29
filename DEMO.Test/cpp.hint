@@ -1,0 +1,5 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define TEST_F(test_fixture, test_name) GTEST_TEST_(test_fixture, test_name, test_fixture, ::testing::internal::GetTypeId<test_fixture>())
+#define EXPECT_STREQ(s1, s2) EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperSTREQ, s1, s2)
