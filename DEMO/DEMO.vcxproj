@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CalculatePriority.cpp" />
+    <ClCompile Include="CompareDateTime.cpp" />
     <ClCompile Include="CreateListStudentTicketsByHand.cpp" />
     <ClCompile Include="PopulateToStudentListFromReadingFile.cpp" />
     <ClCompile Include="SaveToFile.cpp" />

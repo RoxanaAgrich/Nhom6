@@ -11,7 +11,5 @@ int calculatePriority(const SinhVien* x) {
 
 	priority += x->CV * 10;
 
-	priority += x->Tgian;
-
 	return priority;
 }

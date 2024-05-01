@@ -53,7 +53,13 @@ void populateToStudentListFromReadingFile(PQueue& qu, const char* fileName) {
 		x.CV = atoi(token);
 
 		token = strtok(NULL, "#");
-		x.Tgian = atoi(token);
+		x.Tgian.day = atoi(token);
+
+		token = strtok(NULL, "#");
+		x.Tgian.month = atoi(token);
+
+		token = strtok(NULL, "#");
+		x.Tgian.year = atoi(token);
 
 		PQueueNode* p = createPQueueNode(x);
 		if (p == NULL) {

@@ -8,6 +8,11 @@
 #include <time.h>
 #include <string.h>
 
+struct DateTime {
+	int day;
+	int month;
+	int year;
+};
 //Khai bao du lieu
 struct SinhVien
 {
@@ -15,11 +20,11 @@ struct SinhVien
 	char TenSV[500];
 	char Lop[250];
 	int  CV;
-	int Tgian;
 	char Ill[3];
 	int SoKhoa;
 	bool IsCntt;
 	bool IsGoodHeal;
+	DateTime Tgian;
 };
 
 typedef SinhVien ItemType; //Khai bao kieu du lieu nguoi dung
@@ -60,4 +65,5 @@ void showMenu();				//Hien thi menu
 void process();					//Xu ly cac chuc nang
 int calculatePriority(const SinhVien* x); // tính độ ưu tiên của sinh viên
 bool saveToFile(PQueue qu, const char* fileName);// lưu danh sách sinh viên vào file Text
+int compareDateTime(DateTime* dt1, DateTime* dt2);
 #endif  PQueue_h
