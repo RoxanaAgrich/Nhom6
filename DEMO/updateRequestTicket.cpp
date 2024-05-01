@@ -17,10 +17,10 @@ void updateRequestTicket(PQueue& qu) {
 
 	printf("\nThong tin phieu yeu cau cua sinh vien can cap nhat la: \n");
 	showPQueueNode(student);
-
+	deleteStudentFromStudentCode(qu, mssv);
 	printf("\nCap nhat thong tin cho phieu yeu cau cua sinh vien:\n");
 	enterInfoForStudentRequestTicket(student->Info);
-
 	student->priority = calculatePriority(&student->Info);
+	insert(qu, student);
 	printf("\nCap nhat thong tin thanh cong.\n");
 }

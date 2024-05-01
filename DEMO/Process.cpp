@@ -4,7 +4,8 @@
 #include <string.h>
 void process() {
 	ItemType X, Y;
-	PQueueNode* P, * Q;
+	PQueueNode* P;
+	PQueueNode* Q;
 	PQueue PQU;
 	initPQueue(PQU);
 	int luachon;
@@ -52,6 +53,7 @@ void process() {
 		{
 			printf("\n nhap mssv can xoa: ");
 			scanf("%s", &mssv);
+			PQueueNode* student = findStudentByStudentCode(PQU, mssv);
 			deleteStudentFromStudentCode(PQU, mssv);
 			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
 			showPQueue(PQU);
