@@ -47,10 +47,10 @@ void enterInfoForStudentRequestTicket(ItemType& x)
 		printf("\nNhap ngay dien phieu: ");
 		scanf_s("%d", &x.Tgian.day);
 
-		printf("Nhap ngay dien phieu: ");
+		printf("Nhap thang dien phieu: ");
 		scanf_s("%d", &x.Tgian.month);
 
-		printf("Nhap ngay dien phieu: ");
+		printf("Nhap nam dien phieu: ");
 		scanf_s("%d", &x.Tgian.year);
 	}
 }

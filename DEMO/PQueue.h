@@ -65,5 +65,8 @@ void showMenu();				//Hien thi menu
 void process();					//Xu ly cac chuc nang
 int calculatePriority(const SinhVien* x); // tính độ ưu tiên của sinh viên
 bool saveToFile(PQueue qu, const char* fileName);// lưu danh sách sinh viên vào file Text
-int compareDateTime(DateTime* dt1, DateTime* dt2);
+int compareDateTime(DateTime* dt1, DateTime* dt2);	// So sánh thời gian nhập phiếu 
+void prioritizeJob(PQueue& qu, const char* mssv);		// Ưu tiên công việc của một sinh viên qua MSSV 
+void showNext10Jobs(PQueue qu);		// Hiện danh sách 10 công việc sắp được làm đầu tiên 
+void findClassWithMostJobs(PQueue qu);		// Tìm lớp có số lượng công việc cần được thực hiện nhiều nhất 
 #endif  PQueue_h
