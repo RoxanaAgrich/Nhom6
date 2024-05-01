@@ -18,13 +18,12 @@ PQueueNode* createPQueueNode(ItemType x) {
 //====================================================
 void showPQueueNode(PQueueNode* p) {
 	//Hien thi thong tin 1 node ra man hinh
-	printf("\n%-15s  %-20s  %-10s  %-10s  %-30s  %-10s\n", "MA SO SINH VIEN", "TEN SINH VIEN", "LOP", "BENH", "CONG VIEC", "THOI GIAN");
+	printf("\n %-20s  %-20s  %-10s  %-10s  %-30s  %-10s\n", "MA SO SINH VIEN", "TEN SINH VIEN", "LOP", "BENH", "CONG VIEC", "THOI GIAN");
 
 	const char* illnessStatus = (strcmp(p->Info.Ill, "Y") == 0) ? "Co" : "Khong";
 	const char* jobDescription = getJobDescription(p->Info.CV);
-	int stt = 0;
 
-	printf("%-4d  %-15s  %-20s  %-10s  %-10s  %-30s  %d/%d/%d\n", stt++, p->Info.Mssv, p->Info.TenSV, p->Info.Lop, illnessStatus, jobDescription, p->Info.Tgian.day, p->Info.Tgian.month, p->Info.Tgian.year);
+	printf(" %-20s  %-20s  %-10s  %-10s  %-30s  %d/%d/%d\n", p->Info.Mssv, p->Info.TenSV, p->Info.Lop, illnessStatus, jobDescription, p->Info.Tgian.day, p->Info.Tgian.month, p->Info.Tgian.year);
 }
 
 //====================================================

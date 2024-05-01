@@ -15,7 +15,7 @@ void showNext10Jobs(PQueue qu) {
         printf("Lop: %s\n", currentJob->Info.Lop);
         printf("Tinh trang suc khoe: %s\n", illnessStatus);
         printf("Cong viec: %s\n", jobDescription);
-        printf("Thoi gian: %d ngay\n", currentJob->Info.Tgian);
+        printf("Thoi gian: %d/%d/%d\n", currentJob->Info.Tgian.day, currentJob->Info.Tgian.month, currentJob->Info.Tgian.year);
         printf("------------------------------------------------------------------------\n");
         currentJob = currentJob->Next;
         count++;

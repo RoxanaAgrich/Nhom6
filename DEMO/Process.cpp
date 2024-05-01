@@ -101,6 +101,16 @@ void process() {
 			showNext10Jobs(PQU);
 			break;
 		}
+		case 11:
+		{
+			printAllRequestTickets(PQU);
+			break;
+		}
+		case 12:
+		{
+			updateRequestTicket(PQU);
+			break;
+		}
 		default:
 			break;
 		}

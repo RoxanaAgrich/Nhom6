@@ -134,6 +134,7 @@
     <ClCompile Include="CreateListStudentTicketsByHand.cpp" />
     <ClCompile Include="findClassWithMostJobs (1).cpp" />
     <ClCompile Include="PopulateToStudentListFromReadingFile.cpp" />
+    <ClCompile Include="printAllRequestTickets.cpp" />
     <ClCompile Include="prioritizeJob(1).cpp" />
     <ClCompile Include="SaveToFile.cpp" />
     <ClCompile Include="ShowListStudentTickets.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="PQueue.cpp" />
     <ClCompile Include="Process.cpp" />
     <ClCompile Include="showNext10obs(1).cpp" />
+    <ClCompile Include="updateRequestTicket.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\..\..\priority-queue\dsSinhVien.txt" />

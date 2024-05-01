@@ -45,10 +45,8 @@ struct PQueue {
 void nhapTTSinhVien(ItemType& x);
 void xuatTTSinhVien(ItemType x);
 //void loadTTSinhVien(FILE* fi, ItemType& x);
-
 PQueueNode* createPQueueNode(ItemType x); //Cap phat 1 node moi de luu tru
 void showPQueueNode(PQueueNode* p); 		//Hien thi thong tin 1 node 
-
 void initPQueue(PQueue& qu);		//Khoi tao hang doi
 int isEmpty(PQueue qu);			//Kiem tra hang doi rong
 void showPQueue(PQueue qu);		//Hien noi dung cua hang doi
@@ -69,4 +67,6 @@ int compareDateTime(DateTime* dt1, DateTime* dt2);	// So sánh thời gian nhậ
 void prioritizeJob(PQueue& qu, const char* mssv);		// Ưu tiên công việc của một sinh viên qua MSSV 
 void showNext10Jobs(PQueue qu);		// Hiện danh sách 10 công việc sắp được làm đầu tiên 
 void findClassWithMostJobs(PQueue qu);		// Tìm lớp có số lượng công việc cần được thực hiện nhiều nhất 
+void updateRequestTicket(PQueue& qu);		// Cap nhat thong tin cho phieu yeu cau cua sinh vien
+void printAllRequestTickets(PQueue qu);		//  In ra danh sach tat ca phieu duoc nhap cua sinh vien
 #endif  PQueue_h
