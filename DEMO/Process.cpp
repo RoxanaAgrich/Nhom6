@@ -54,7 +54,18 @@ void process() {
 			printf("\n nhap mssv can xoa: ");
 			scanf("%s", &mssv);
 			PQueueNode* student = findStudentByStudentCode(PQU, mssv);
-			deleteStudentFromStudentCode(PQU, mssv);
+			if (student) {
+			printf("\n Thong tin phieu uu cau cua sinh vien can xoa la: \n");
+			const char* illnessStatus = (strcmp(student->Info.Ill, "Y") == 0) ? "Co" : "Khong";
+			const char* jobDescription = getJobDescription(student->Info.CV);
+			printf("  %-15s  %-20s  %-10s  %-10s  %-30s  %d/%d/%d\n", student->Info.Mssv, student->Info.TenSV, student->Info.Lop, illnessStatus, jobDescription, student->Info.Tgian.day, student->Info.Tgian.month, student->Info.Tgian.year);
+
+				deleteStudentFromStudentCode(PQU, mssv);
+			}
+			else {
+				printf("\n khong tim thay sinh vien can xoa  ");
+			}
+			
 			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
 			showPQueue(PQU);
 			break;
