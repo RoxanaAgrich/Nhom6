@@ -39,13 +39,22 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ReadStudentTicketsFromFile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ShowListStudentTickets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CreateListStudentTicketsByHand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CalculatePriority.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PopulateToStudentListFromReadingFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveToFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CalculateNumberOfDays.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

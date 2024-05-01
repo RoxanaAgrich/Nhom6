@@ -9,13 +9,20 @@
 #include <string.h>
 
 //Khai bao du lieu
+
+typedef struct {
+	int day;
+	int month;
+	int year;
+} Date;
+
 struct SinhVien
 {
 	char Mssv[250];
 	char TenSV[500];
 	char Lop[250];
 	int  CV;
-	int Tgian;
+	Date Tgian;
 	char Ill[3];
 	int SoKhoa;
 	bool IsCntt;
@@ -59,5 +66,6 @@ void showRequestTypes();// hien thi cong viec can xu ly
 void showMenu();				//Hien thi menu
 void process();					//Xu ly cac chuc nang
 int calculatePriority(const SinhVien* x); // tính độ ưu tiên của sinh viên
+int daysSince2000(Date date);
 bool saveToFile(PQueue qu, const char* fileName);// lưu danh sách sinh viên vào file Text
 #endif  PQueue_h

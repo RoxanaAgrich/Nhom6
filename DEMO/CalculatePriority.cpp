@@ -11,7 +11,7 @@ int calculatePriority(const SinhVien* x) {
 
 	priority += x->CV * 10;
 
-	priority += x->Tgian;
+	priority += 1000000 - daysSince2000(x->Tgian);
 
 	return priority;
 }

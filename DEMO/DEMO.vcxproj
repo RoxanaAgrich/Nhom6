@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CalculateNumberOfDays.cpp" />
     <ClCompile Include="CalculatePriority.cpp" />
     <ClCompile Include="CreateListStudentTicketsByHand.cpp" />
     <ClCompile Include="PopulateToStudentListFromReadingFile.cpp" />
