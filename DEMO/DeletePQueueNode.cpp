@@ -10,10 +10,10 @@ void deleteStudentFromStudentCode(PQueue& qu, const char* mssv) {
         printf("\n Khong tim thay");
         return;
     }
-//printf("\n Thong tin phieu uu cau cua sinh vien can xoa la: \n");
-//const char* illnessStatus = (strcmp(student->Info.Ill, "Y") == 0) ? "Co" : "Khong";
-//const char* jobDescription = getJobDescription(student->Info.CV);
-//printf("  %-15s  %-20s  %-10s  %-10s  %-30s  %d/%d/%d\n", student->Info.Mssv, student->Info.TenSV, student->Info.Lop, illnessStatus, jobDescription, student->Info.Tgian.day, student->Info.Tgian.month, student->Info.Tgian.year);
+printf("\n Thong tin phieu uu cau cua sinh vien can xoa la: \n");
+const char* illnessStatus = (strcmp(student->Info.Ill, "Y") == 0) ? "Co" : "Khong";
+const char* jobDescription = getJobDescription(student->Info.CV);
+printf("  %-15s  %-20s  %-10s  %-10s  %-30s  %d/%d/%d\n", student->Info.Mssv, student->Info.TenSV, student->Info.Lop, illnessStatus, jobDescription, student->Info.Tgian.day, student->Info.Tgian.month, student->Info.Tgian.year);
 
     if (student == qu.Head) {
     PQueueNode* nextPNode = qu.Head->Next;

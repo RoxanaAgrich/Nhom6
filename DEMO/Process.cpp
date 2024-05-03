@@ -24,53 +24,36 @@ void process() {
 		{
 		case 1:
 		{
+			createPQueue(PQU);
 			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
 			showPQueue(PQU);
 			break;
 		}
 		case 2:
 		{
-			createPQueue(PQU);
+			insertAStudentNodeIntoPQueue(PQU);
 			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
 			showPQueue(PQU);
 			break;
 		}
 		case 3:
 		{
-			insertAStudentNodeIntoPQueue(PQU);
+			populateToStudentListFromReadingFile(PQU,fileName);
 			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
 			showPQueue(PQU);
 			break;
 		}
 		case 4:
 		{
-			populateToStudentListFromReadingFile(PQU,fileName);
-			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
-			showPQueue(PQU);
-			break;
-		}
-		case 5:
-		{
 			printf("\n nhap mssv can xoa: ");
 			scanf("%s", &mssv);
-			PQueueNode* student = findStudentByStudentCode(PQU, mssv);
-			if (student) {
-			printf("\n Thong tin phieu uu cau cua sinh vien can xoa la: \n");
-			const char* illnessStatus = (strcmp(student->Info.Ill, "Y") == 0) ? "Co" : "Khong";
-			const char* jobDescription = getJobDescription(student->Info.CV);
-			printf("  %-15s  %-20s  %-10s  %-10s  %-30s  %d/%d/%d\n", student->Info.Mssv, student->Info.TenSV, student->Info.Lop, illnessStatus, jobDescription, student->Info.Tgian.day, student->Info.Tgian.month, student->Info.Tgian.year);
-
-				deleteStudentFromStudentCode(PQU, mssv);
-			}
-			else {
-				printf("\n khong tim thay sinh vien can xoa  ");
-			}
-			
+			deleteStudentFromStudentCode(PQU, mssv);
 			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
 			showPQueue(PQU);
 			break;
+
 		}
-		case 6:
+		case 5:
 		{
 			printf("\n Nhap ma so sinh vien can tim kiem trong danh sach phieu giai quyet cong viec: ");
 			scanf("%s", &mssv);
@@ -83,7 +66,7 @@ void process() {
 			showPQueueNode(student);
 			break;
 		}
-		case 7:
+		case 6:
 		{
 			bool canSaveToFile = saveToFile(PQU, fileName);
 			if (canSaveToFile) {
@@ -94,7 +77,7 @@ void process() {
 			}
 			break;
 		}
-		case 8:
+		case 7:
 		{
 			printf("\nNhap ma so sinh vien can uu tien: ");
 			scanf("%s", &mssv);
@@ -103,23 +86,23 @@ void process() {
 			showPQueue(PQU);
 			break;
 		}
-		case 9:
+		case 8:
 		{
 			findClassWithMostJobs(PQU);
 			printf("\nSinh vien lop co nhieu viec can khoa xu ly nhat:");
 			break;
 		}
-		case 10:
+		case 9:
 		{
 			showNext10Jobs(PQU);
 			break;
 		}
-		case 11:
+		case 10:
 		{
 			printAllRequestTickets(PQU);
 			break;
 		}
-		case 12:
+		case 11:
 		{
 			updateRequestTicket(PQU);
 			break;
