@@ -46,32 +46,47 @@ int isEmpty(PQueue qu) {
 
 //====================================================
 int insert(PQueue& qu, PQueueNode* p) {
-	if (qu.Head == NULL) {
-		qu.Head = p;
-		qu.Tail = p;
-		return 1;
-	}
+    // Insert a node into the priority queue
+    if (qu.Head == NULL) {
+        qu.Head = p;
+        qu.Tail = p;
+        return 1;
+    }
 
-	PQueueNode* current = qu.Head;
-	PQueueNode* previous = NULL;
+    PQueueNode* current = qu.Head;
+    PQueueNode* previous = NULL;
 
-	while (current != NULL && current->priority < p->priority) {
-		previous = current;
-		current = current->Next;
-	}
+    while (current != NULL && current->priority < p->priority) {
+        previous = current;
+        current = current->Next;
+    }
 
-	if (previous == NULL) {
-		p->Next = qu.Head;
-		qu.Head = p;
-	}
-	else {
-		previous->Next = p;
-		p->Next = current;
-	}
+    if (previous == NULL) {
+        p->Next = qu.Head;
+        qu.Head = p;
+    }
+    else if (current != NULL && current->priority == p->priority) {
+        // Compare date and time if priority is same
+        if (compareDateTime(&current->Info.Tgian, &p->Info.Tgian) == -1) {
+            previous->Next = p;
+            p->Next = current;
+            return 1;
+        }
+        else {
+            PQueueNode* nextNode = current->Next;
+            current->Next = p;
+            p->Next = nextNode;
+            return 1;
+        }
+    }
+    else {
+        previous->Next = p;
+        p->Next = current;
+    }
 
-	if (current == NULL) {
-		qu.Tail = p;
-	}
+    if (current == NULL) {
+        qu.Tail = p;
+    }
 
-	return 1;
+    return 1;
 }
