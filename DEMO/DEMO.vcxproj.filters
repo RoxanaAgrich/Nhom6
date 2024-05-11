@@ -57,13 +57,13 @@
     <ClCompile Include="CompareDateTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="findClassWithMostJobs (1).cpp">
+    <ClCompile Include="findClassWithMostJobs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="prioritizeJob(1).cpp">
+    <ClCompile Include="prioritizeJob.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="showNext10obs(1).cpp">
+    <ClCompile Include="showNext10jobs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="printAllRequestTickets.cpp">
