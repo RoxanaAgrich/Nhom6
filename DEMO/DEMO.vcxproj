@@ -132,10 +132,10 @@
     <ClCompile Include="CalculatePriority.cpp" />
     <ClCompile Include="CompareDateTime.cpp" />
     <ClCompile Include="CreateListStudentTicketsByHand.cpp" />
-    <ClCompile Include="findClassWithMostJobs (1).cpp" />
+    <ClCompile Include="findClassWithMostJobs.cpp" />
     <ClCompile Include="PopulateToStudentListFromReadingFile.cpp" />
     <ClCompile Include="printAllRequestTickets.cpp" />
-    <ClCompile Include="prioritizeJob(1).cpp" />
+    <ClCompile Include="prioritizeJob.cpp" />
     <ClCompile Include="SaveToFile.cpp" />
     <ClCompile Include="ShowListStudentTickets.cpp" />
     <ClCompile Include="InsertAStudentNodeIntoPQueue.cpp" />
@@ -146,7 +146,7 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="PQueue.cpp" />
     <ClCompile Include="Process.cpp" />
-    <ClCompile Include="showNext10obs(1).cpp" />
+    <ClCompile Include="showNext10jobs.cpp" />
     <ClCompile Include="updateRequestTicket.cpp" />
   </ItemGroup>
   <ItemGroup>

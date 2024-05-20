@@ -12,7 +12,7 @@ void showRequestTypes() {
 	printf("\n4. Dang ki du thi chung chi CNTT");
 	printf("\n5. Mua sach CNTT");
 }
-//====================================================	
+//====================================================
 // cach tinh nang cua chuong trinh
 void showMenu() {
 	printf("\n                        LUA CHON										");
