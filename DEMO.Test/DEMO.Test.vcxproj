@@ -102,7 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CalculatePriorityTest.cpp" />
-    <ClCompile Include="InsertAStudentNodeIntoPQueueTest.cpp" />
+    <ClCompile Include="CreatePQueueNodeWithValidSinhVienTest.cpp" />
     <ClCompile Include="FindQueueNodeTest.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

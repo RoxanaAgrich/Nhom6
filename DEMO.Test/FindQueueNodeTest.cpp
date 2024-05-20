@@ -37,7 +37,7 @@ static TEST_F(FindQueueNodeTest, FindExistingStudent) {
     addStudent("123", "John Doe", 10);
     addStudent("124", "Jane Doe", 20);
 
-    PQueueNode* found = findStudentByStudentCode(queue, "123");
+    PQueueNode* found = findStudentByStudentCode(queue, "123"); 
     ASSERT_NE(found, nullptr);
     EXPECT_STREQ(found->Info.Mssv, "123");
     EXPECT_STREQ(found->Info.TenSV, "John Doe");
