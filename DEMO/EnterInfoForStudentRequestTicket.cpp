@@ -44,7 +44,13 @@ void enterInfoForStudentRequestTicket(ItemType& x)
 		printf("\nChon cong viec muon xu li: ");
 		scanf_s("%d", &x.CV);
 
-		printf("Nhap thoi gian dien phieu: ");
-		scanf_s("%d", &x.Tgian);
+		printf("\nNhap ngay dien phieu: ");
+		scanf_s("%d", &x.Tgian.day);
+
+		printf("Nhap thang dien phieu: ");
+		scanf_s("%d", &x.Tgian.month);
+
+		printf("Nhap nam dien phieu: ");
+		scanf_s("%d", &x.Tgian.year);
 	}
 }

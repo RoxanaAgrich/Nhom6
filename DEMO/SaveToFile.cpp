@@ -17,13 +17,15 @@ bool saveToFile(PQueue qu, const char* fileName) {
     current = qu.Head;
     while (current != NULL) {
         ItemType* sv = &current->Info;
-        fprintf(file, "%s#%s#%s#%s#%d#%d\n",
+        fprintf(file, "%s#%s#%s#%s#%d#%d#%d#%d\n",
             sv->Mssv,
             sv->TenSV,
             sv->Lop,
             sv->Ill,
             sv->CV,
-            sv->Tgian
+            sv->Tgian.day,
+            sv->Tgian.month,
+            sv->Tgian.year
         );
 
         current = current->Next;

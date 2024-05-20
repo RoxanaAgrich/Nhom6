@@ -14,7 +14,7 @@ protected:
         memset(sv.Lop, 0, sizeof(sv.Lop));
         memset(sv.Ill, 0, sizeof(sv.Ill));
         sv.CV = 0;
-        sv.Tgian = 0;
+        sv.Tgian = {1,1,2020};
         sv.SoKhoa = 0;
         sv.IsCntt = false;
         sv.IsGoodHeal = false;
@@ -56,8 +56,8 @@ static TEST_F(CalculatePriorityTest, ITStudentWithMultipleYearsAndCV) {
     sv.IsCntt = true;
     sv.SoKhoa = 3;
     sv.CV = 7;
-    sv.Tgian = 15;
+    sv.Tgian = {1,1,2020};
     sv.IsGoodHeal = true;
-    int expected_priority = 3000 + 70 + 100 + 15;
+    int expected_priority = 3000 + 70 + 100;
     ASSERT_EQ(calculatePriority(&sv), expected_priority);
 }

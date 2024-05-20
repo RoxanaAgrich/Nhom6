@@ -4,7 +4,8 @@
 #include <string.h>
 void process() {
 	ItemType X, Y;
-	PQueueNode* P, * Q;
+	PQueueNode* P;
+	PQueueNode* Q;
 	PQueue PQU;
 	initPQueue(PQU);
 	int luachon;
@@ -23,32 +24,26 @@ void process() {
 		{
 		case 1:
 		{
+			createPQueue(PQU);
 			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
 			showPQueue(PQU);
 			break;
 		}
 		case 2:
 		{
-			createPQueue(PQU);
+			insertAStudentNodeIntoPQueue(PQU);
 			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
 			showPQueue(PQU);
 			break;
 		}
 		case 3:
 		{
-			insertAStudentNodeIntoPQueue(PQU);
-			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
-			showPQueue(PQU);
-			break;
-		}
-		case 4:
-		{
 			populateToStudentListFromReadingFile(PQU,fileName);
 			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
 			showPQueue(PQU);
 			break;
 		}
-		case 5:
+		case 4:
 		{
 			printf("\n nhap mssv can xoa: ");
 			scanf("%s", &mssv);
@@ -56,8 +51,9 @@ void process() {
 			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien: ");
 			showPQueue(PQU);
 			break;
+
 		}
-		case 6:
+		case 5:
 		{
 			printf("\n Nhap ma so sinh vien can tim kiem trong danh sach phieu giai quyet cong viec: ");
 			scanf("%s", &mssv);
@@ -70,7 +66,7 @@ void process() {
 			showPQueueNode(student);
 			break;
 		}
-		case 7:
+		case 6:
 		{
 			bool canSaveToFile = saveToFile(PQU, fileName);
 			if (canSaveToFile) {
@@ -79,6 +75,36 @@ void process() {
 			else {
 				printf("\n Loi! That bai viec dong bo!");
 			}
+			break;
+		}
+		case 7:
+		{
+			printf("\nNhap ma so sinh vien can uu tien: ");
+			scanf("%s", &mssv);
+			prioritizeJob(PQU, mssv);
+			printf("\nDanh sach phieu giai quyet yeu cau cua sinh vien sau khi uu tien: ");
+			showPQueue(PQU);
+			break;
+		}
+		case 8:
+		{
+			findClassWithMostJobs(PQU);
+			printf("\nSinh vien lop co nhieu viec can khoa xu ly nhat:");
+			break;
+		}
+		case 9:
+		{
+			showNext10Jobs(PQU);
+			break;
+		}
+		case 10:
+		{
+			printAllRequestTickets(PQU);
+			break;
+		}
+		case 11:
+		{
+			updateRequestTicket(PQU);
 			break;
 		}
 		default:
