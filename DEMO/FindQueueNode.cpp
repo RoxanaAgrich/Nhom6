@@ -7,7 +7,6 @@
 PQueueNode* findStudentByStudentCode(PQueue qu, const char* mssv) {
 	if (!mssv) return NULL;
 	if (isEmpty(qu)) { 
-		printf("\n co zo");
 		return NULL; }
 	PQueueNode* curr = qu.Head;
 	while (curr) {
