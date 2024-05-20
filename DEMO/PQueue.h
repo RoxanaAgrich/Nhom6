@@ -42,8 +42,6 @@ struct PQueue {
 
 //====================================================
 //Khai bao nguyen mau ham
-void nhapTTSinhVien(ItemType& x);
-void xuatTTSinhVien(ItemType x);
 //void loadTTSinhVien(FILE* fi, ItemType& x);
 PQueueNode* createPQueueNode(ItemType x); //Cap phat 1 node moi de luu tru
 void showPQueueNode(PQueueNode* p); 		//Hien thi thong tin 1 node 
